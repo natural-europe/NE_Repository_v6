@@ -230,7 +230,7 @@ public class ARIADNEImplementation {
 		if (expression.contains("geolocation:"))
 			expression = expression.replace("geolocation:",
 					"metadata.geolocation:");
-		
+
 		if (expression.contains("latitude:"))
 			expression = expression.replace("latitude:",
 					"metadata.geolocation@latitude:");
@@ -248,6 +248,9 @@ public class ARIADNEImplementation {
 					"lom.solr:\"all\"");
 		if (expression.contains("keyword:"))
 			expression = expression.replace("keyword:", "metadata.subject:");
+		if (expression.contains("collection:"))
+			expression = expression.replace("collection:",
+					"header.collectionId:");
 
 		return expression;
 	}
