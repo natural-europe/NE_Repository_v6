@@ -205,24 +205,24 @@ public class ResultDelegateARIADNERFJS implements IndexSearchDelegate {
 		if (values != null) {
 
 			Object[] results = values.toArray();
+			//
+			// int length = results.length;
+			// if (length == 1) {
+			// Object object = results[0];
+			// json.put(responeseName, object);
+			//
+			// } else {
+			JSONObject jsonObject = new JSONObject();
 
-			int length = results.length;
-			if (length == 1) {
-				Object object = results[0];
-				json.put(responeseName, object);
+			for (int i = 0; i < results.length; i++) {
 
-			} else {
-				JSONObject jsonObject = new JSONObject();
+				Object object = results[i];
 
-				for (int i = 0; i < results.length; i++) {
+				jsonObject.put(responeseName + "_" + i, object);
 
-					Object object = results[i];
-
-					jsonObject.put(responeseName + "_" + i, object);
-
-				}
-				json.put(responeseName, jsonObject);
 			}
+			json.put(responeseName, jsonObject);
+			// }
 
 		}
 
