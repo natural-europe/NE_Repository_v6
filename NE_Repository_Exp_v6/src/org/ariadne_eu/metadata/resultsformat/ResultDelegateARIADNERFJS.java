@@ -408,6 +408,9 @@ public class ResultDelegateARIADNERFJS implements IndexSearchDelegate {
 			return "date";
 		else if (internalName.equalsIgnoreCase("metadata.type"))
 			return "type";
+		
+		else if (internalName.equalsIgnoreCase("metadata.contentType"))
+			return "contentType";
 		else if (internalName.equalsIgnoreCase("metadata.format"))
 			return "format";
 		else if (internalName.equalsIgnoreCase("metadata.language"))

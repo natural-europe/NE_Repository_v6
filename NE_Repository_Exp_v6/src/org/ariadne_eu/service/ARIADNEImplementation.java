@@ -212,6 +212,9 @@ public class ARIADNEImplementation {
 
 		if (expression.contains("format:"))
 			expression = expression.replace("format:", "metadata.format:");
+		
+		if (expression.contains("contentType:"))
+			expression = expression.replace("contentType:", "metadata.contentType:");
 
 		if (expression.contains("language:"))
 			expression = expression.replace("language:", "metadata.language:");
